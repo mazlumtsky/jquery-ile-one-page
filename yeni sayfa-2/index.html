@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+ 
+  </head>
+
+  
+  <body data-spy="scroll" data-target=".navbar" data-offset="35">
+    <!--MENÜ-->
+    <nav class="navbar fixed-top navbar-expand-sm bg-primary navbar-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand">MAZLUM TAŞKAYA</a>
+        <button
+          class="navbar-toggler"
+          data-target="#menu"
+          data-toggle="collapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="ml-auto navbar-nav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">Home </a>
+            </li>
+            <li class="nav-item">
+              <a href="#html" class="nav-link">HTML5</a>
+            </li>
+            <li class="nav-item">
+              <a href="#css" class="nav-link">CSS3</a>
+            </li>
+            <li class="nav-item">
+              <a href="#bt" class="nav-link">Bootstrap</a>
+            </li>
+            <li class="nav-item">
+              <a href="#js" class="nav-link">JavaScript</a>
+            </li>
+            <li class="nav-item">
+              <a href="#react" class="nav-link">React</a>
+            </li>
+            <li class="nav-item">
+              <a href="#jq" class="nav-link">Jquery</a>
+            </li>
+            <li>
+             
+            </li>
+            <li>
+              
+             </li>
+          </ul>
+
+          <form  class="form-inline my-2 my-lg-0">
+            <input  class="form-control mr-sm-2" type="search"placeholder="Arama..." 
+            aria-label="Search" id="mazlum">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+              Arama..
+            </button>
+          </form>
+
+          <button id="btn-giris" type="submit"  class="btn btn-warning  btn-sm ml-2">Giriş Yap</button>
+          <button id="btn-üyeol" type="submit"  class="btn btn-light  btn-sm ml-1">Üye Ol</button>
+        </div>
+      </div>
+    </nav>
+
+<!--giriş yap-->
+   <div class="modal fade" id="myUye" role="dialog">
+       <div class="modal-dialog">
+         <div class="modal-content bg-warning">
+              <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                      <h3>Giriş Yap</h3>
+                      <form action="">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="user-email" name="user-email" placeholder="Email Adresiniz" required>
+                            <span id="validation-email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                          <input type="tel" class="form-control" id="user-phone" name="user-phone" placeholder="Telefon numarası" required>
+                          <span id="validation-phone" class="text-danger"></span>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="user-password" name="user-password" placeholder="Şifreniz" required>
+                        <span id="validation-password" class="text-danger"></span>
+                    </div>
+                        <button id="btnsubmit" type="subit" class="btn btn-primary">Gönder</button>
+                        <button type="reset" class="btn btn-danger">Temizle</button>
+                     
+                      </form>
+                </div>
+              </div>
+         </div>
+       </div>
+   </div>
+   <!--üye ol-->
+   <div class="modal fade" id="byUye" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light">
+           <div class="modal-header">
+             <button class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title"></h4>
+           </div>
+           <div class="modal-body">
+             <div class="container">
+                   <h3>Üye ol</h3>
+
+                   <form action="">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="user-ad" name="user-ad" placeholder="Adınız" required>
+                      <span id="vali-ad" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="user-soyad" name="user-soyad" placeholder="Soyadınız" required>
+                    <span id="vali-soyad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="user-tc" name="user-tc" placeholder="T.C." required>
+                  <span id="vali-tc" class="text-danger"></span>
+              </div>
+                     <div class="form-group">
+                         <input type="email" class="form-control" id="user-email" name="user-email" placeholder="Email Adresiniz" required>
+                         <span id="vali-email" class="text-danger"></span>
+                     </div>
+                     <div class="form-group">
+                       <input type="tel" class="form-control" id="user-phone" name="user-phone" placeholder="Telefon numarası" required>
+                       <span id="vali-phone" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                     <input type="password" class="form-control" id="user-password" name="user-password" placeholder="Şifreniz" required autofocus>
+                     <span id="vali-password" class="text-danger"></span>
+                 </div>
+                 <div class="form-group">
+                  <input type="password" class="form-control" id="user-password" name="user-password" placeholder="Şifre Tekrar" required autofocus>
+                  <span id="vali-passwordd" class="text-danger"></span>
+              </div>
+                     <button id="btn-submit" type="subit" class="btn btn-primary">Gönder</button>
+                     <button type="reset" class="btn btn-outline-danger">Temizle</button>
+                  
+                   </form>
+             </div>
+           </div>
+      </div>
+    </div>
+</div>
+
+
+    <header>
+      <div class="jumbotron text-white bg-dark">
+        <div class="container">
+          <h2 class="h2 mt-5" id="header-title-btk">
+            Lorem ipsum dolor sit amet.
+          </h2>
+          <p class="text-capitalize">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <a href="" style="color: #fff" class="btn btn-outline-primary"
+            >Daha Fazla...</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="rov">
+        <!--Sol Taraf-->
+        <div class="col-md-10 mb-4">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2 id="html">HTML5</h2>
+            </div>
+            <img src="img/frontend.jpg" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Başlık</h5>
+              <p class="card text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Expedita saepe tenetur aperiam, ratione eveniet fugit alias
+                repudiandae eius similique aliquid asperiores, sequi porro
+                dignissimos iure! Quas natus dolor quo consectetur aliquam
+                consequuntur illum reiciendis doloremque numquam laudantium cum
+                suscipit, repudiandae minus sapiente iusto magnam ex. Mollitia
+                dolorem atque provident ea illum sit porro cupiditate eligendi
+                quos, nostrum odio magni officiis voluptatem cumque optio
+                recusandae. Illo sunt rerum eaque ipsum! Commodi dicta illum eos
+                et quae nisi atque ab deserunt necessitatibus?
+              </p>
+              <buton class="btn btn-primary">Detay</buton>
+            </div>
+            <div style="opacity: 0.6" class="card-footer">
+              Date 7 Temmuz 2002
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2 id="css">CSS3</h2>
+            </div>
+            <img src="img/css.jpg" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Başlık</h5>
+              <p class="card text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Expedita saepe tenetur aperiam, ratione eveniet fugit alias
+                repudiandae eius similique aliquid asperiores, sequi porro
+                dignissimos iure! Quas natus dolor quo consectetur aliquam
+                consequuntur illum reiciendis doloremque numquam laudantium cum
+                suscipit, repudiandae minus sapiente iusto magnam ex. Mollitia
+                dolorem atque provident ea illum sit porro cupiditate eligendi
+                quos, nostrum odio magni officiis voluptatem cumque optio
+                recusandae. Illo sunt rerum eaque ipsum! Commodi dicta illum eos
+                et quae nisi atque ab deserunt necessitatibus?
+              </p>
+              <buton class="btn btn-primary">Detay</buton>
+            </div>
+            <div style="opacity: 0.6" class="card-footer">
+              Date 7 Temmuz 2002
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2 id="bt">Bootstrap</h2>
+            </div>
+            <img src="img/Bootstrap.jpg" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Başlık</h5>
+              <p class="card text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Expedita saepe tenetur aperiam, ratione eveniet fugit alias
+                repudiandae eius similique aliquid asperiores, sequi porro
+                dignissimos iure! Quas natus dolor quo consectetur aliquam
+                consequuntur illum reiciendis doloremque numquam laudantium cum
+                suscipit, repudiandae minus sapiente iusto magnam ex. Mollitia
+                dolorem atque provident ea illum sit porro cupiditate eligendi
+                quos, nostrum odio magni officiis voluptatem cumque optio
+                recusandae. Illo sunt rerum eaque ipsum! Commodi dicta illum eos
+                et quae nisi atque ab deserunt necessitatibus?
+              </p>
+              <buton class="btn btn-primary">Detay</buton>
+            </div>
+            <div style="opacity: 0.6" class="card-footer">
+              Date 7 Temmuz 2002
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2 id="js">JavaScript</h2>
+            </div>
+            <img src="img/javascript.webp" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Başlık</h5>
+              <p class="card text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Expedita saepe tenetur aperiam, ratione eveniet fugit alias
+                repudiandae eius similique aliquid asperiores, sequi porro
+                dignissimos iure! Quas natus dolor quo consectetur aliquam
+                consequuntur illum reiciendis doloremque numquam laudantium cum
+                suscipit, repudiandae minus sapiente iusto magnam ex. Mollitia
+                dolorem atque provident ea illum sit porro cupiditate eligendi
+                quos, nostrum odio magni officiis voluptatem cumque optio
+                recusandae. Illo sunt rerum eaque ipsum! Commodi dicta illum eos
+                et quae nisi atque ab deserunt necessitatibus?
+              </p>
+              <buton class="btn btn-primary">Detay</buton>
+            </div>
+            <div style="opacity: 0.6" class="card-footer">
+              Date 7 Temmuz 2002
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2 id="react">React</h2>
+            </div>
+            <img src="img/react.jpeg" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Başlık</h5>
+              <p class="card text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Expedita saepe tenetur aperiam, ratione eveniet fugit alias
+                repudiandae eius similique aliquid asperiores, sequi porro
+                dignissimos iure! Quas natus dolor quo consectetur aliquam
+                consequuntur illum reiciendis doloremque numquam laudantium cum
+                suscipit, repudiandae minus sapiente iusto magnam ex. Mollitia
+                dolorem atque provident ea illum sit porro cupiditate eligendi
+                quos, nostrum odio magni officiis voluptatem cumque optio
+                recusandae. Illo sunt rerum eaque ipsum! Commodi dicta illum eos
+                et quae nisi atque ab deserunt necessitatibus?
+              </p>
+              <buton class="btn btn-primary">Detay</buton>
+            </div>
+            <div style="opacity: 0.6" class="card-footer">
+              Date 7 Temmuz 2002
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2 id="jq">jquery</h2>
+            </div>
+            <img src="img/jquery.jpg" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Başlık</h5>
+              <p class="card text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Expedita saepe tenetur aperiam, ratione eveniet fugit alias
+                repudiandae eius similique aliquid asperiores, sequi porro
+                dignissimos iure! Quas natus dolor quo consectetur aliquam
+                consequuntur illum reiciendis doloremque numquam laudantium cum
+                suscipit, repudiandae minus sapiente iusto magnam ex. Mollitia
+                dolorem atque provident ea illum sit porro cupiditate eligendi
+                quos, nostrum odio magni officiis voluptatem cumque optio
+                recusandae. Illo sunt rerum eaque ipsum! Commodi dicta illum eos
+                et quae nisi atque ab deserunt necessitatibus?
+              </p>
+              <buton class="btn btn-primary">Detay</buton>
+            </div>
+            <div style="opacity: 0.6" class="card-footer">
+              Date 7 Temmuz 2002
+            </div>
+          </div>
+        </div>
+
+       <div class="card-body">
+       <div class="table-responsive">
+         <table class="table table-bordered table-hover table-dark table-striped">
+             <caption class="border border-dark ">Genel Veri analizleri</caption>
+             <thead>
+               <tr>
+                 <th>1.alan</th>
+                 <th>2.alan</th>
+                 <th>3.alan</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                <th>1.alan</th>
+                <th>2.alan</th>
+                <th>3.alan</th>
+               </tr>
+               <tr>
+                <th>1.alan</th>
+                <th>2.alan</th>
+                <th>3.alan</th>
+               </tr>
+               <tr>
+                <th>1.alan</th>
+                <th>2.alan</th>
+                <th>3.alan</th>
+               </tr>
+             </tbody>
+             <tfoot>
+               <tr>
+                 <th class="text-center " colspan="3">MAZLUM TAŞKAYA</th>
+               </tr>
+             </tfoot>
+         </table>
+       </div>
+</div>
+        <!--en çok ziyaret edilen-->
+        <div class="card mb-5">
+          <div class="card-header">
+            <h3 class="text-center text-muted">En Çok Ziyaret Edilenler</h3>
+            <div class="card-body">
+              <div class="rov">
+                <div class="col-6 float-left">
+                  <ul class="list-unstyled">
+                    <li><a href="">HTML5</a></li>
+                    <li><a href="">CSS3</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">REACT</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 float-right">
+                  <ul class="list-unstyled">
+                    <li><a href="">servlet</a></li>
+                    <li><a href="">jsp</a></li>
+                    <li><a href="">jsf</a></li>
+                    <li><a href="">spring boot</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--buton linkleri-->
+        <div class="card mb-5">
+          <div class="card-header">
+            <h5>Tag Cloud</h5>
+            <div class="card-body">
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Dee</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Den</a
+              >
+
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >De</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >D</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deme</a
+              >
+
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Denme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Dene</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Den</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+              <a href="" class="btn btn-outline-primary border-radius mt-2"
+                >Deneme</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--geçiş butonları-->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Geri</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">İleri</a></li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      style="background-color: #000; opacity: 0.8"
+      class="text-center text-dark text-lg-start"
+    >
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-light">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-light">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-light">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-light">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center text-light p-3 bg-dark"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        © 2020 Copyright:
+        <a class="text-light" href="#">MAZLUM TAŞKAYA</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/ui/1.13.0-rc.3/jquery-ui.min.js"
+    integrity="sha256-R6eRO29lbCyPGfninb/kjIXeRjMOqY3VWPVk6gMhREk="
+    crossorigin="anonymous"></script>
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+     </script>
+      <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>   
+
+  </body>
+</html>
